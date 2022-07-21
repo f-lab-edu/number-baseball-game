@@ -3,12 +3,11 @@
  */
 package edu.number.baseball;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import edu.number.baseball.game.NumberBaseBallGame;
 
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        NumberBaseBallGame game = new NumberBaseBallGame();
+        game.run();
     }
 }
