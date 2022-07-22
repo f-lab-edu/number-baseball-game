@@ -4,10 +4,19 @@ import java.util.List;
 
 public class NumberBaseballPitching {
 
-    private Numbers targetNumbers;
+    private final Numbers targetNumbers;
+    private static NumberBaseballPitching singleton;
 
-    public NumberBaseballPitching(Numbers targetNumbers){
+    private NumberBaseballPitching(Numbers targetNumbers){
         this.targetNumbers = targetNumbers;
+    }
+
+    public static NumberBaseballPitching getInstance(Numbers targetNumbers){
+        // AGJ : This application has a single thread
+        if(singleton == null){
+            singleton = new NumberBaseballPitching(targetNumbers);
+        }
+        return singleton;
     }
 
     public PitchingResult pitching(Numbers numbers){

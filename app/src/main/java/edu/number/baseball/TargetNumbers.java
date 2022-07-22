@@ -10,24 +10,14 @@ public class TargetNumbers implements Numbers{
     private static final int MAX = 3;
     private final List<Integer> numbers = new ArrayList<>();
 
-    public TargetNumbers(){
+    private TargetNumbers(){
         createNumbers();
     }
-    public TargetNumbers(List<Integer> inputs){
-        numbers.addAll(inputs);
-    }
-    public TargetNumbers(String inputs){
-        try{
-            Integer.parseInt(inputs);
-            for (char input: inputs.toCharArray()) {
-                numbers.add(input - '0');
-            }
-        }catch (Exception ignore){
-            createNumbers();
-        }
-
+    public static TargetNumbers createNewRandomNumberSequence(){
+        return new TargetNumbers();
     }
 
+    // TODO we can create numbers with various strategy, issue #4
     private void createNumbers(){
         for (int i = 0; i < MAX; i++) {
             numbers.add((int)(Math.random() * 10));

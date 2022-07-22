@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,36 +12,36 @@ public class NumberBaseballPitchingTest {
     @Test
     @DisplayName("Create random number")
     void createTargetRandomNumber(){
-        Numbers targetNumbers = new TargetNumbers();
+        Numbers targetNumbers = TargetNumbers.createNewRandomNumberSequence();
         System.out.println(targetNumbers);
         assertEquals(targetNumbers.toString().length(), 3);
     }
 
     @Test
     @DisplayName("Create random number with list")
-    void createTargetRandomNumberWithList(){
-        Numbers targetNumbers = new TargetNumbers(new ArrayList<>(Arrays.asList(1, 2, 3)));
-        System.out.println(targetNumbers);
-        assertEquals(targetNumbers.toString(), "123");
+    void createInputNumberWithList(){
+        Numbers inputNumbers = InputNumbers.createInputNumberSequenceWithList(new ArrayList<>(Arrays.asList(1, 2, 3)));
+        System.out.println(inputNumbers);
+        assertEquals(inputNumbers.toString(), "123");
     }
 
     @Test
     @DisplayName("Create number with string")
-    void createTargetRandomNumberWithString(){
+    void createInputNumberWithString(){
         final String inputs = "123";
-        Numbers targetNumbers = new TargetNumbers(inputs);
-        System.out.println(targetNumbers);
-        assertEquals(targetNumbers.toString(), inputs);
+        Numbers inputNumbers = InputNumbers.createInputNumberSequenceWithString(inputs);
+        System.out.println(inputNumbers);
+        assertEquals(inputNumbers.toString(), inputs);
     }
 
     @Test
     @DisplayName("Create pitching rule class")
     void createPitchingRule(){
-        Numbers targetNumbers = new TargetNumbers("123");
-        NumberBaseballPitching numberBaseballPitching = new NumberBaseballPitching(targetNumbers);
-        Numbers inputNumbers1 = new TargetNumbers(targetNumbers.toString());
-        Numbers inputNumbers2 = new TargetNumbers("139");
-        Numbers inputNumbers3 = new TargetNumbers("312");
+        Numbers targetNumbers = InputNumbers.createInputNumberSequenceWithString("123");
+        NumberBaseballPitching numberBaseballPitching = NumberBaseballPitching.getInstance(targetNumbers);
+        Numbers inputNumbers1 = InputNumbers.createInputNumberSequenceWithString(targetNumbers.toString());
+        Numbers inputNumbers2 = InputNumbers.createInputNumberSequenceWithString("139");
+        Numbers inputNumbers3 = InputNumbers.createInputNumberSequenceWithString("312");
         PitchingResult pitchingResult1 = numberBaseballPitching.pitching(inputNumbers1);
         PitchingResult pitchingResult2 = numberBaseballPitching.pitching(inputNumbers2);
         PitchingResult pitchingResult3 = numberBaseballPitching.pitching(inputNumbers3);
