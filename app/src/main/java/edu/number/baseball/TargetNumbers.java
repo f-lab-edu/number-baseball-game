@@ -1,8 +1,11 @@
 package edu.number.baseball;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class TargetNumbers implements Numbers{
     private static final int MAX = 3;
     private final List<Integer> numbers = new ArrayList<>();

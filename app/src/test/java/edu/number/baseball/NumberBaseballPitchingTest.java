@@ -38,10 +38,20 @@ public class NumberBaseballPitchingTest {
     @Test
     @DisplayName("Create pitching rule class")
     void createPitchingRule(){
-        Numbers targetNumbers = new TargetNumbers();
+        Numbers targetNumbers = new TargetNumbers("123");
         NumberBaseballPitching numberBaseballPitching = new NumberBaseballPitching(targetNumbers);
-        Numbers inputNumbers = new TargetNumbers(targetNumbers.toString());
-        PitchingResult pitchingResult = numberBaseballPitching.pitching(inputNumbers);
-        assertEquals(pitchingResult.getBall(), 1);
+        Numbers inputNumbers1 = new TargetNumbers(targetNumbers.toString());
+        Numbers inputNumbers2 = new TargetNumbers("139");
+        Numbers inputNumbers3 = new TargetNumbers("312");
+        PitchingResult pitchingResult1 = numberBaseballPitching.pitching(inputNumbers1);
+        PitchingResult pitchingResult2 = numberBaseballPitching.pitching(inputNumbers2);
+        PitchingResult pitchingResult3 = numberBaseballPitching.pitching(inputNumbers3);
+
+        assertEquals(pitchingResult1.getBall(), 0);
+        assertEquals(pitchingResult1.getStrike(), 3);
+        assertEquals(pitchingResult2.getBall(), 1);
+        assertEquals(pitchingResult2.getStrike(), 1);
+        assertEquals(pitchingResult3.getBall(), 3);
+        assertEquals(pitchingResult3.getStrike(), 0);
     }
 }
