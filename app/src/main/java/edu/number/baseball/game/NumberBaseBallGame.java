@@ -1,6 +1,7 @@
 package edu.number.baseball.game;
 
 import edu.number.baseball.*;
+import edu.number.baseball.randomnumber.MathRandomRule;
 
 public class NumberBaseBallGame {
 
@@ -8,7 +9,7 @@ public class NumberBaseBallGame {
         int isContinue = 9;
         // Create Target Numbers
         NumberBaseballPitching numberBaseballPitching
-                = NumberBaseballPitching.getInstance(TargetNumbers.createNewRandomNumberSequence());
+                = NumberBaseballPitching.getInstance(TargetNumbers.createNewRandomNumberSequence(new MathRandomRule()));
 
         while (isContinue-- > 0) {
             // TODO Input
