@@ -6,10 +6,14 @@ import java.util.Scanner;
 
 
 public class IntegerArrayReader implements NumbersReader{
+    private final Scanner reader;
 
+    public IntegerArrayReader() {
+        this.reader = new Scanner(System.in);
+    }
     @Override
     public InputNumbers readNumber() {
-        Scanner reader = new Scanner(System.in);
+
         return null;
     }
 }
