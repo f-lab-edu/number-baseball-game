@@ -5,9 +5,7 @@ import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,9 +16,12 @@ public class NumberBaseballPitchingTest {
         List<Integer> check = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
         for(int i = 0; i < 1000 ; i++){
             Numbers targetNumbers = TargetNumbers.createNewRandomNumberSequence(new MathRandomRule());
+            Set<Integer> checkDup = new HashSet<>();
             for(int j = 0 ; j < targetNumbers.getNumbers().size(); j++){
                 assertTrue(check.contains(targetNumbers.getNumbers().get(j)));
+                checkDup.add(targetNumbers.getNumbers().get(j));
             }
+            assertEquals(checkDup.size(), 3);
             assertEquals(targetNumbers.toString().length(), 3);
         }
     }
