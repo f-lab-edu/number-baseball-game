@@ -1,6 +1,10 @@
 package edu.number.baseball.game;
 
 import edu.number.baseball.*;
+import edu.number.baseball.domain.InputNumbers;
+import edu.number.baseball.domain.Numbers;
+import edu.number.baseball.domain.PitchingResult;
+import edu.number.baseball.domain.TargetNumbers;
 import edu.number.baseball.randomnumber.MathRandomRule;
 
 public class NumberBaseBallGame {

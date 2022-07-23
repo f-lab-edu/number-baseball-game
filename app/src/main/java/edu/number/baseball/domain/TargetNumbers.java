@@ -1,4 +1,4 @@
-package edu.number.baseball;
+package edu.number.baseball.domain;
 
 import edu.number.baseball.randomnumber.RandomNumberGenerationRule;
 import lombok.Getter;
