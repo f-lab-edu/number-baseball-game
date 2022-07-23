@@ -37,7 +37,7 @@ public class StringNumbersReader implements NumbersReader{
 
     // An error is returned when the input fails more than 5 times.
     private void verifyNumberOfInput(int count) {
-        if (count >= 5) throw new WrongInputRepeatException();
+        if (count > 5) throw new WrongInputRepeatException();
     }
 
 }

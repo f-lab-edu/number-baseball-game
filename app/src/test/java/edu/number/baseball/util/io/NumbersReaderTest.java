@@ -98,11 +98,35 @@ class NumbersReaderTest {
         StringNumbersReader reader = new StringNumbersReader();
 
         Scanner mockScanner = mock(Scanner.class);
-        when(mockScanner.nextLine()).thenReturn("stringValue", "233412451", "2451251", "안녕안녕", "fail_fail", "245");
 
+        when(mockScanner.nextLine()).thenReturn("stringValue", "233412451", "2451251", "안녕안녕", "fail_fail", "245");
         mockingScanner(reader, mockScanner);
 
         assertThrows(WrongInputRepeatException.class, reader::readNumber);
+        verify(mockScanner, times(5)).nextLine();
+    }
+
+    @Test
+    @DisplayName("문자열 입력(정상 케이스) 04 - 4번 입력")
+    void stringReader_02() throws NoSuchFieldException, IllegalAccessException {
+        StringNumbersReader reader = new StringNumbersReader();
+
+        Scanner mockScanner = mock(Scanner.class);
+        when(mockScanner.nextLine()).thenReturn("stringValue", "233412451", "1251521", "245");
+
+        mockingScanner(reader, mockScanner);
+
+        InputNumbers inputNumbers = reader.readNumber();
+        List<Integer> numbers = inputNumbers.getNumbers();
+
+
+        verify(mockScanner, times(4)).nextLine();
+        assertEquals(numbers.size(), 3);
+        assertAll(
+                () -> assertEquals(numbers.get(0), 2),
+                () -> assertEquals(numbers.get(1), 4),
+                () -> assertEquals(numbers.get(2), 5)
+        );
     }
 
 
