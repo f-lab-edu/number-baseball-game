@@ -17,6 +17,9 @@ repositories {
 }
 
 dependencies {
+    // 테스트를 위한 Mockito 프레임워크 사용
+    testImplementation 'org.mockito:mockito-core:4.6.1'
+
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 

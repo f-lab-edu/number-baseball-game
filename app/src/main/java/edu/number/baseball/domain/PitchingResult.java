@@ -1,4 +1,4 @@
-package edu.number.baseball;
+package edu.number.baseball.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

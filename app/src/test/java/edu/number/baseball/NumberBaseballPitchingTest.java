@@ -1,7 +1,10 @@
 package edu.number.baseball;
 
+import edu.number.baseball.domain.InputNumbers;
+import edu.number.baseball.domain.Numbers;
+import edu.number.baseball.domain.PitchingResult;
+import edu.number.baseball.domain.TargetNumbers;
 import edu.number.baseball.randomnumber.MathRandomRule;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

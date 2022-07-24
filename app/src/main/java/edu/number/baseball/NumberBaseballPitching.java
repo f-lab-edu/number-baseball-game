@@ -1,5 +1,8 @@
 package edu.number.baseball;
 
+import edu.number.baseball.domain.Numbers;
+import edu.number.baseball.domain.PitchingResult;
+
 import java.util.List;
 
 public class NumberBaseballPitching {

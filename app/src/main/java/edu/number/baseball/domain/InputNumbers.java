@@ -1,4 +1,4 @@
-package edu.number.baseball;
+package edu.number.baseball.domain;
 
 import lombok.Getter;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class InputNumbers implements Numbers{
+public class InputNumbers implements Numbers {
 
     private final List<Integer> numbers = new ArrayList<>();
 
