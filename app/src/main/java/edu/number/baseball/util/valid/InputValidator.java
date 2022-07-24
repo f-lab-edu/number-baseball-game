@@ -11,7 +11,7 @@ public class InputValidator {
         char[] chars = inputNumber.toCharArray();
 
         for (char ch : chars) {
-            isDigit = Character.isDigit(ch);
+            isDigit = isDigit && Character.isDigit(ch);
         }
         return isDigit && (inputNumber.length() == 3);
     }
