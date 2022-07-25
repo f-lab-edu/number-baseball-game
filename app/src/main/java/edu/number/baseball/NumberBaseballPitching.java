@@ -2,24 +2,21 @@ package edu.number.baseball;
 
 import edu.number.baseball.domain.Numbers;
 import edu.number.baseball.domain.PitchingResult;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class NumberBaseballPitching {
 
     private final Numbers targetNumbers;
-    private static NumberBaseballPitching singleton;
 
     private NumberBaseballPitching(Numbers targetNumbers){
         this.targetNumbers = targetNumbers;
     }
 
     public static NumberBaseballPitching getInstance(Numbers targetNumbers){
-        // AGJ : This application has a single thread
-        if(singleton == null){
-            singleton = new NumberBaseballPitching(targetNumbers);
-        }
-        return singleton;
+        return new NumberBaseballPitching(targetNumbers);
     }
 
     public PitchingResult pitching(Numbers numbers){
