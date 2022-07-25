@@ -14,9 +14,7 @@ public class PitchingResult {
 
     @Override
     public String toString() {
-        return "PitchingResult{" +
-                "strike=" + strike +
-                ", ball=" + ball +
-                '}';
+        return "스트라이크 : " + strike +
+                ", 볼 :" + ball;
     }
 }
