@@ -3,12 +3,26 @@
  */
 package edu.number.baseball;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import edu.number.baseball.game.NumberBaseBallGame;
 
+import java.util.Scanner;
+
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        NumberBaseBallGame game = new NumberBaseBallGame();
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            System.out.println("===================================");
+            System.out.println("==                               ==");
+            System.out.println("==       Number Baseball         ==");
+            System.out.println("==                               ==");
+            System.out.println("===================================");
+            game.run();
+            try{
+                System.out.println("다시 시작: 1, 종료: 아무 키");
+                int answer = scanner.nextInt();
+                if (answer != 1) break;
+            }catch (Exception ignore){}
+        }
     }
 }
