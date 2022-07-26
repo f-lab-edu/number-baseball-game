@@ -23,6 +23,7 @@ public class NumberBaseBallGame {
             InputNumbers inputNumbers = numbersReader.readNumber();
             PitchingResult pitchingResult = numberBaseballPitching.pitching(inputNumbers);
             printResult(isContinue, pitchingResult);
+            if (pitchingResult.isVictory()) break;
         }
     }
 
