@@ -3,7 +3,6 @@ package edu.number.baseball.domain;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @Builder
@@ -15,6 +14,6 @@ public class PitchingResult {
     @Override
     public String toString() {
         return "스트라이크 : " + strike +
-                ", 볼 :" + ball;
+                ", 볼 :" + ball + "\n";
     }
 }

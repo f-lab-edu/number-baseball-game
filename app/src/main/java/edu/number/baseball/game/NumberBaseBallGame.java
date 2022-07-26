@@ -8,6 +8,7 @@ import edu.number.baseball.domain.TargetNumbers;
 import edu.number.baseball.randomnumber.MathRandomRule;
 import edu.number.baseball.util.io.NumbersReader;
 import edu.number.baseball.util.io.StringNumbersReader;
+import edu.number.baseball.util.io.write.ResultFileWrite;
 
 public class NumberBaseBallGame {
 
@@ -19,13 +20,16 @@ public class NumberBaseBallGame {
         NumbersReader numbersReader = new StringNumbersReader();
 
         while (isContinue-- > 0) {
-
             InputNumbers inputNumbers = numbersReader.readNumber();
-
             PitchingResult pitchingResult = numberBaseballPitching.pitching(inputNumbers);
-            System.out.println(isContinue + " left");
-            System.out.println(pitchingResult);
-
+            printResult(isContinue, pitchingResult);
         }
+    }
+
+    private void printResult(int isContinue, PitchingResult pitchingResult) {
+        int round = 9 - isContinue;
+        String resultStr = round + " 회 :" + pitchingResult.toString();
+        System.out.println(resultStr);
+        ResultFileWrite.resultWrite(resultStr);
     }
 }
