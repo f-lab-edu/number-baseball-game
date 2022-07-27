@@ -25,17 +25,8 @@ public abstract class ResultFileWrite {
     }
 
     private static String getResultFilePath() {
-        String osName = System.getProperty("os.name").toLowerCase();
-        if (osName.contains("mac")) {
-            String resultPath = "./app/src/main/resources/result";
-            resultPath.replaceAll("/", File.separator);
-            return  resultPath;
-        } else if (osName.contains("window")){
-            String resultPath = "./app/src/main/resources/result";
-            resultPath.replaceAll("/", File.separator);
-            return resultPath;
-        }
-        return "app/src/main/resources/result";
-    }
+        String resultPath = "./app/src/main/resources/result";
+        resultPath.replaceAll("/", File.separator);
+        return  resultPath;    }
 }
 
