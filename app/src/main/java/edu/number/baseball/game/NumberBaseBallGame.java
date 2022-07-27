@@ -23,7 +23,10 @@ public class NumberBaseBallGame {
             InputNumbers inputNumbers = numbersReader.readNumber();
             PitchingResult pitchingResult = numberBaseballPitching.pitching(inputNumbers);
             printResult(isContinue, pitchingResult);
-            if (pitchingResult.isVictory()) break;
+            if (pitchingResult.isVictory()) {
+                System.out.println("------------------------승리 하셨습니다.------------------------");
+                break;
+            }
         }
     }
 
